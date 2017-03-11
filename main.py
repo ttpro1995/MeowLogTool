@@ -1,6 +1,6 @@
-import log_util
-
 import sys
+
+from meowlogtool import log_util
 
 api = "07510d18-73c8-4552-8227-264c111ab3ab"
 if __name__ == "__main__":
