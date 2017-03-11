@@ -1,0 +1,6 @@
+
+*.pyc
+
+temp_file\.log
+
+\.idea/
