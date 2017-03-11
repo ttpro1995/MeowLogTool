@@ -22,13 +22,13 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='1.2.0',
+    version='0.1',
 
-    description='A sample Python project',
+    description='A python logger util for cat',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/pypa/sampleproject',
+    url='https://github.com/ttpro1995/MeowLogTool',
 
     # Author details
     author='Thai Thien',
@@ -67,7 +67,7 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    # packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    packages=['meowlogtool'],
 
     # Alternatively, if you want to distribute just a my_module.py, uncomment
     # this:
