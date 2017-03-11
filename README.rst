@@ -3,7 +3,8 @@ Meow Log Tool
 A tool to help you create logger which print to file, console or use
 `Loggly <https://www.loggly.com/>`_
 
-.. highlight:: python
+.. code-block:: python
+
     api = "YOUR-API"
     if __name__ == "__main__":
 
