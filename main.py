@@ -1,10 +1,8 @@
 import sys
-
 from meowlogtool import log_util
 
-api = "07510d18-73c8-4552-8227-264c111ab3ab"
-
 api = "YOUR-API"
+
 if __name__ == "__main__":
 
     # log to console and file

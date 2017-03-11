@@ -5,7 +5,10 @@ A tool to help you create logger which print to file, console or use
 
 .. code-block:: python
 
-    api = "YOUR-API"
+    import sys
+    from meowlogtool import log_util
+    loggly_api = "YOUR-API-OF-LOGGLY.COM"
+
     if __name__ == "__main__":
 
         # log to console and file
@@ -13,11 +16,11 @@ A tool to help you create logger which print to file, console or use
         logger1.info("LOG_FILE") # log using logger1
 
         # log to console, file and loggly.com
-        logger2 = log_util.create_logger("loggly", print_console=True, use_loggly=True, loggly_api_key=api)
+        logger2 = log_util.create_logger("loggly", print_console=True, use_loggly=True, loggly_api_key=loggly_api)
         logger2.info("Log from python")
 
         # attach log to stdout (print function)
-        s1 = log_util.StreamToLogger(logger2)
+        s1 = log_util.StreamToLogger(logger1)
         sys.stdout = s1
 
         # anything print to console will be log
