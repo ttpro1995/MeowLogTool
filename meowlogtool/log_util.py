@@ -1,12 +1,14 @@
 import logging
 
-def create_logger(logger_name, print_console = False, use_loggly = False, loggly_api_key = None):
+
+def create_logger(logger_name, print_console = False, use_loggly = False, loggly_api_key = None, loggly_tag = "python"):
     """
     Create a logger write to file logger_name.log
     :param logger_name: name of the file
     :param print_console: (Default False) True = print log on console (also write to file).
     :param use_loggly: (Default False) Set true if you want to use loggly
     :param loggly_api_key (Default None) Put your loggly api key here
+    :param loggly_tag: tag for loggly
     :return: logger
     """
     FORMAT = '%(asctime)s : %(levelname)s : %(message)s'
@@ -22,7 +24,7 @@ def create_logger(logger_name, print_console = False, use_loggly = False, loggly
         assert loggly_api_key != None
         import loggly.handlers
         lgy = loggly.handlers.HTTPSHandler(
-            'https://logs-01.loggly.com/inputs/'+loggly_api_key+'/tag/python')
+            'https://logs-01.loggly.com/inputs/'+loggly_api_key+'/tag/'+loggly_tag)
         lgy.setFormatter(logFormatter)
         logger.addHandler(lgy)
 
