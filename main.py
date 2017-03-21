@@ -10,7 +10,7 @@ if __name__ == "__main__":
     logger1.info("LOG_FILE") # log using logger1
 
     # log to console, file and loggly.com
-    logger2 = log_util.create_logger("loggly", print_console=True, use_loggly=True, loggly_api_key=api)
+    logger2 = log_util.create_logger("loggly", print_console=True, use_loggly=True, loggly_api_key=api, loggly_tag='test')
     logger2.info("Log from python")
 
     # attach log to stdout (print function)
