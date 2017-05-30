@@ -24,10 +24,12 @@ A tool to help you create logger which print to file, console or use `Loggly <ht
         sys.stdout = s1
 
         # anything print to console will be log
-        print 'I am Pusheen the cat'
+        print ('I am Pusheen the cat')
         a = 1234
         print ('I eat 3 shortcakes already. It is too short')
         print ('cost = ', a)
+        html_log = log_util.up_gist('doggy.log', 'test_doggy', 'test_doggy')
+        print('link on gist %s'%(html_log))
 
 
 

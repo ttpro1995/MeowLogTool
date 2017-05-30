@@ -1,4 +1,35 @@
 import logging
+import json
+import requests
+def up_gist(logger_path, name, description = "meowlogtool"):
+    """
+    Upload your log to gist
+    :return:
+    """
+    """
+    {
+      "description": "the description for this gist",
+      "public": true,
+      "files": {
+        "file1.txt": {
+          "content": "String file contents"
+        }
+      }
+    }
+    """
+    file = open(logger_path, 'r')
+    file_content = file.read()
+    gist_obj = {}
+    gist_obj['description'] = description
+    gist_obj['public'] = False
+    gist_obj['files'] = {}
+    gist_obj['files'][name] = {}
+    gist_obj['files'][name]['content'] = file_content
+    json_string = json.dumps(gist_obj)
+    r = requests.post('https://api.github.com/gists', data=json_string)
+    response = json.loads(r.content)
+    html_url = response['html_url']
+    return html_url
 
 
 def create_logger(logger_name, print_console = False, use_loggly = False, loggly_api_key = None, loggly_tag = "python"):

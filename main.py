@@ -6,7 +6,7 @@ api = "YOUR-API"
 if __name__ == "__main__":
 
     # log to console and file
-    logger1 = log_util.create_logger("temp_file", print_console=True)
+    logger1 = log_util.create_logger("doggy", print_console=True)
     logger1.info("LOG_FILE") # log using logger1
 
     # log to console, file and loggly.com
@@ -18,7 +18,9 @@ if __name__ == "__main__":
     sys.stdout = s1
 
     # anything print to console will be log
-    print 'I am Pusheen the cat'
+    print ('I am Pusheen the cat')
     a = 1234
     print ('I eat 3 shortcakes already. It is too short')
     print ('cost = ', a)
+    html_log = log_util.up_gist('doggy.log', 'test_doggy', 'test_doggy')
+    print(html_log)
