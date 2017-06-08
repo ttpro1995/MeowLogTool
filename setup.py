@@ -22,7 +22,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.1.5',
+    version='0.1.6',
 
     description='A python logger util for cat',
     long_description=long_description,
@@ -43,7 +43,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
@@ -77,7 +77,7 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['loggly-python-handler'],
+    install_requires=['loggly-python-handler', 'requests'],
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,

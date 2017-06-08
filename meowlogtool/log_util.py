@@ -1,9 +1,14 @@
 import logging
 import json
 import requests
-def up_gist(logger_path, name, description = "meowlogtool"):
+def up_gist(logger_path, name, description = "meowlogtool", client_id = None, client_secret= None):
     """
     Upload your log to gist
+    :param logger_path: path to your text file
+    :param name: file name on gist
+    :param description: description on gist
+    :param client_id: client_id on gist
+    :param client_secret: client_secret on gist
     :return:
     """
     """
@@ -17,6 +22,7 @@ def up_gist(logger_path, name, description = "meowlogtool"):
       }
     }
     """
+    "?client_id=xxxx&client_secret=yyyy"
     file = open(logger_path, 'r')
     file_content = file.read()
     gist_obj = {}
@@ -26,6 +32,7 @@ def up_gist(logger_path, name, description = "meowlogtool"):
     gist_obj['files'][name] = {}
     gist_obj['files'][name]['content'] = file_content
     json_string = json.dumps(gist_obj)
+    params = {'client_id': client_id, 'client_secret':client_secret}
     r = requests.post('https://api.github.com/gists', data=json_string)
     response = json.loads(r.content)
     html_url = response['html_url']
