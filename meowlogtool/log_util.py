@@ -33,7 +33,7 @@ def up_gist(logger_path, name, description = "meowlogtool", client_id = None, cl
     gist_obj['files'][name]['content'] = file_content
     json_string = json.dumps(gist_obj)
     params = {'client_id': client_id, 'client_secret':client_secret}
-    r = requests.post('https://api.github.com/gists', data=json_string)
+    r = requests.post('https://api.github.com/gists', data=json_string, params = params)
     response = json.loads(r.content)
     html_url = response['html_url']
     return html_url
